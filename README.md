@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🚀 SmartBook-AI: Intelligent Appointment System
 
-## Getting Started
+SmartBook-AI is a seamless and efficient appointment management system powered by Artificial Intelligence. It eliminates the need for complex forms, allowing customers to book appointments by simply typing a natural sentence about their needs.
 
-First, run the development server:
+✨ Key Features
+AI-Powered Booking: Understands natural language input from customers and extracts booking details automatically.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Secure Admin Dashboard: A protected interface for administrators to view, search, and manage all appointments.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Real-time Database: Powered by Supabase for instant data synchronization.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Responsive Design: Fully optimized for all screen sizes, including mobile, tablet, and desktop.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Modern Tech Stack: Built with the latest Next.js 14 and Tailwind CSS for speed and reliability.
 
-## Learn More
+🛠️ Tech Stack
+Framework:
 
-To learn more about Next.js, take a look at the following resources:
+Styling:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Database & Auth:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Deployment:
 
-## Deploy on Vercel
+🚀 Getting Started
+To get a local copy up and running, follow these steps:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Clone the Repository
+2. Install Dependencies
+3. Environment Variables
+Create a .env.local file in the root directory and add your Supabase credentials:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Run the Project
+Open with your browser to see the result.
+
+📄 License
+This project is licensed under the MIT License.
+
+🛠️ How to Run Locally
+Clone & Install: First, download the code from your GitHub repository and install the necessary packages.
+
+Environment Setup: Create a file named .env.local in the root folder. You need to add your Supabase credentials here so the app can talk to your database:
+
+Start Developing: Run the development server:
+
+Open http://localhost:3000 in your browser to see the booking page.
+
+🔄 The Execution Logic (How it works)
+The system is divided into two main "flows" that work together:
+
+1. The Booking Flow (Customer Side)
+Input: The user types a natural sentence (e.g., "I'm Nimal, I need a haircut tomorrow at 10 AM") into the textarea.
+
+API Processing: When they click "Confirm Booking," the message is sent to the /api/chat route.
+
+Data Storage: The backend processes the text and saves the details (Name, Service, Date/Time) directly into the Supabase appointments table.
+
+2. The Management Flow (Admin Side)
+Authentication: When you visit /admin, the useEffect hook checks if you are logged in via Supabase Auth. If not, it redirects you to the /login page.
+
+Data Fetching: Once logged in, the dashboard calls fetchAppointments(), which pulls the latest data from the database.
+
+Live Updates: Since it uses Supabase, the table updates as soon as new bookings arrive. You can search for specific customers or delete old entries using the dashboard UI.
+
+🌐 Live Deployment
+Since you deployed this on Render.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
